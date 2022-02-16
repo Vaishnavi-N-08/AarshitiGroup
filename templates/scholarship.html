@@ -6,7 +6,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 <title>Scholarship Home</title>
-{% endblock head %} 
+{% endblock head %}
 
 {% block body %}
 
@@ -17,11 +17,15 @@
     <div class="card-body">
       <h3 class="card-title" style="margin-top: 15px;">Aarshiti Foundation Scholarships</h3>
       <p class="card-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ad quos error, numquam dolore quasi explicabo
-        doloremque, sequi sapiente adipisci perferendis. Culpa, sequi eos. Impedit quibusdam reiciendis consequuntur
-        exercitationem mollitia.lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ad quos error,
-        numquam dolore quasi explicabo doloremque, sequi sapiente adipisci perferendis. Culpa, sequi eos. Impedit
-        quibusdam reiciendis consequuntur exercitationem mollitia.l
+        ‘We make a living by what we get but we make a life by what we give’
+        We at Arshiti group believe in giving our best to society!
+        We strive towards financially helping some of the brightest minds of our State. The process of choosing these
+        candidates will be purely merit-based.
+        Three of the best and brightest students among all the applicants will be selected as beneficiaries of the
+        scholarship of ₹10,000/- each.
+        The Aarshiti Group aspires to encourage deserving and needful students with this scholarship scheme.
+        It should be noted that only first year students are eligible for this scheme.
+
       </p>
       <!-- <a href="#" class="btn btn-primary"
         style="background-color: rgb(3, 133, 126) !important; font-size: 3vh !important; margin-top: 2%; padding: 12px;">See
@@ -40,7 +44,7 @@
           <div class="card-header" style="text-align: center !important;background: var(--primary);">
             <h3>Required Documents</h3>
           </div>
-          <div class="card-body" style="background: var(--smoke);" >
+          <div class="card-body" style="background: var(--smoke);">
             <p class="card-text">
             <ul>
               <li>Marksheet Marksheet</li>
@@ -139,8 +143,8 @@
 
 <div id="registrationBox" class="registration-box">
   <div class="registration-left">
-    <p>Register For Aarshiti Foundation Counselling</p>
-    <p>Come and Join With Us !!</p>
+    <p>Let us be the air beneath your wings</p>
+    <p>Choose from what is best for you by enrolling, NOW!</p>
   </div>
   <div class="registration-right">
     <div class="registration-container">
@@ -148,9 +152,9 @@
       <div class="content">
         <form method='POST' enctype="multipart/form-data">
           {% csrf_token %}
-          
-          <div class="detail-title" >Personal Details</div>
-          
+
+          <div class="detail-title">Personal Details</div>
+
           <div class="user-details">
             <div class="input-box">
               <span class="details">Full Name</span>
@@ -183,9 +187,9 @@
             </div>
 
           </div>
-          
+
           <div class="detail-title">Educational Details</div>
-          
+
           <div class="user-details">
             <div class="input-box">
               <span class="details">College Name</span>
