@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Counselling</title>
+<link rel="stylesheet" href="{% static 'css/compiled.css' %}" />
+{% endblock head %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="card text-center border-0">
+        <div class="card-body">
+            <h3 class="card-title" style="margin-top: 15px">
+                Aarshiti Foundation Scholarships
+            </h3>
+            <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis ad
+                quos error, numquam dolore quasi explicabo doloremque, sequi sapiente
+                adipisci perferendis. Culpa, sequi eos. Impedit quibusdam reiciendis
+                consequuntur exercitationem mollitia.lorem Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit. Officiis ad quos error, numquam dolore
+                quasi explicabo doloremque, sequi sapiente adipisci perferendis. Culpa,
+                sequi eos. Impedit quibusdam reiciendis consequuntur exercitationem
+                mollitia.l
+            </p>
+            <!-- <a href="#" class="btn btn-primary" style="
+          background-color: rgb(3, 133, 126) !important;
+          font-size: 3vh !important;
+          margin-top: 2%;
+          padding: 12px;
+        ">See Gallery</a> -->
+        </div>
+    </div>
+</div>
+<div class="reviews">Reviews For Our Counselling</div>
+
+<div class="counselling-reviews">
+    <div class="card border-0" style="width: 18rem">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center !important">
+                Some quick example text to build on the card title and make up the bulk
+                of the card's content.
+            </p>
+            <h6 class="card-subtitle mb-2 text-muted" style="text-align: center !important">
+                ~Vaishnavi Narkhede
+            </h6>
+        </div>
+    </div>
+
+    <div class="card border-0" style="width: 18rem">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center !important">
+                Some quick example text to build on the card title and make up the bulk
+                of the card's content.
+            </p>
+            <h6 class="card-subtitle mb-2 text-muted" style="text-align: center !important">
+                ~Vaishnavi Narkhede
+            </h6>
+        </div>
+    </div>
+
+    <div class="card border-0" style="width: 18rem">
+        <div class="card-body">
+            <p class="card-text" style="text-align: center !important">
+                Some quick example text to build on the card title and make up the bulk
+                of the card's content.
+            </p>
+            <h6 class="card-subtitle mb-2 text-muted" style="text-align: center !important">
+                ~Vaishnavi Narkhede
+            </h6>
+        </div>
+    </div>
+</div>
+
+<div class="registration-box">
+    <div class="registration-left">
+        <p>Register For Aarshiti Foundation Counselling</p>
+        <p>Come and Join With Us !!</p>
+    </div>
+    <div class="registration-right">
+        <div class="registration-container">
+            <div class="title" style="text-align: center;">Registration</div>
+            <div class="content">
+                <form method='POST' enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Full Name</span>
+                            <input type="text" name="fullname" id="fullname" placeholder="Enter your name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Email ID</span>
+                            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Mobile No</span>
+                            <input type="tel" name="number" id="number" placeholder="Mobile No" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Course</span>
+                            <input type="text" name="course" id="course" placeholder="Course" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="file" name="proof" id="proof" accept=".doc,.pdf" class="form-control" required>
+                            <label class="input-group-text">Course proof</label>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Address</span>
+                        <textarea name="address" id="address" cols="30" rows="3"
+                            style="border: 1px solid rgb(255, 153, 0) !important; width: 100%;"></textarea>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

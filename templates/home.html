@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+{% block body %}
+<!-- <div class="container-fluid py-2">
+  <div class="head-block" style="width: 100%; height: auto; display: block">
+    <img src="{% static 'assets/scholarship3.jpeg' %}" alt="Snow" style="width: 100%; height: auto; display: block" />
+    <div class="head-content">
+      <p>
+        A unique blend of flavour,generosity and innovation.
+
+      </p>
+      <a href="#" class="btn btn-primary" style="  background-color: rgb(3, 133, 126) !important;" ;>Go somewhere</a>
+    </div>
+  </div>
+</div> -->
+
+<div class="construction-box">
+  <img src="{% static 'assets\Green-logo.png' %}" alt="" />
+
+  <div class="construction-tree">
+    <div class="row row1">
+      <p style="
+          margin-top: 20px;
+          text-align: center;"><span style=" font-size: 3.5vw;">Aarshiti Group</span>
+        <br>
+        <span style="font-size: 2vw;">A unique blend of flavor, generosity, and innovation.</span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<div class="container-fluid py-2">
+  <p style=" margin: 0%; padding: 50px 30px; background:var(--primary);  color: var(--white);
+  text-align: center;">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore ipsa sequi
+    deserunt dolores voluptatibus explicabo dicta minus, reprehenderit rerum
+    modi ullam repudiandae aperiam culpa quisquam laudantium inventore beatae,
+    fugit hic. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni
+    minus ullam, aliquam quibusdam expedita maxime, a voluptatibus atque
+    molestias earum aspernatur ipsam! Nobis distinctio, commodi error tempora
+    voluptatem ab quisquam!
+  </p>
+</div>
+
+<div class="cards-container" style="padding:0 25px;">
+  <div class="card-container">
+    <div class="blog-col curves-left curves-top">
+      <img class="blog-img" src="{% static 'assets/1-i.jpg' %}" />
+    </div>
+    <div class="blog-col curves-right curves-bottom">
+      <div class="blog-content">
+        <h1>Foundation</h1>
+        <p>
+          Here we provide you with Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ipsa autem doloribus ducimus nobis, mollitia
+          repellat corrupti iusto quae unde molestias ab assumenda. Expedita,
+          atque eaque! Consequatur molestias esse mollitia rem?
+        </p>
+        <a><div class="blog-btn">Know More</div></a>
+      </div>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="blog-col curves-left curves-top">
+      <img class="blog-img" src="{% static 'assets/1-i.jpg' %}" />
+    </div>
+    <div class="blog-col curves-right curves-bottom">
+      <div class="blog-content">
+        <h1>Agro-Tech</h1>
+        <p>
+          Here we provide you with Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ipsa autem doloribus ducimus nobis, mollitia
+          repellat corrupti iusto quae unde molestias ab assumenda. Expedita,
+          atque eaque! Consequatur molestias esse mollitia rem?
+        </p>
+        <div class="blog-btn">Know More</div>
+      </div>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="blog-col curves-left curves-top">
+      <img class="blog-img" src="{% static 'assets/1-i.jpg' %}" />
+    </div>
+    <div class="blog-col curves-right curves-bottom">
+      <div class="blog-content">
+        <h1>Spieces</h1>
+        <p>
+          Here we provide you with Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ipsa autem doloribus ducimus nobis, mollitia
+          repellat corrupti iusto quae unde molestias ab assumenda. Expedita,
+          atque eaque! Consequatur molestias esse mollitia rem?
+        </p>
+        <div class="blog-btn">Know More</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
