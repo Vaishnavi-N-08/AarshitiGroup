@@ -20,6 +20,9 @@
             </div>
             <p class="p1" style="margin: 1%;font-size:7vh ; ">Aarshiti Group
             <p>
+            {% for message in messages %}
+            <p style="text-align: center; color: red;">{{message}}</p>
+            {% endfor %}
         </div>
         <div class="register-hero">
             <div class="register-form-box">
@@ -36,11 +39,6 @@
                     <input type="text" name="log" value="yes" style="display: none;">
                     <button type="submit" class="register-submit-btn">Log In</button>
 
-                    {% for message in messages %}
-                    <p style="text-align: center; color: red;">{{message}}
-                    <p>
-                        {% endfor %}
-
                 </form>
                 <form id="register-register" class="register-input-group" method='POST'>
                     {% csrf_token %}
@@ -51,10 +49,6 @@
                         required>
                     <input type="text" name="log" value="no" style="display: none;">
                     <button type="submit" class="register-submit-btn">Register</button>
-
-                    {% for message in messages %}
-                    <p style="text-align: center; color: red;">{{message}}</p>
-                    {% endfor %}
 
                 </form>
             </div>
