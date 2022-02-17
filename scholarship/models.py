@@ -9,8 +9,10 @@ class Scholar(models.Model):
     address = models.TextField(max_length=300,null=False,blank=False)
     collegename = models.CharField(max_length=150,null=False,blank=False)
     grno = models.DecimalField(max_digits=10, decimal_places=0)
-    marksheet = models.FileField(upload_to='schloar_marksheet/',null=False, blank=False)
-    feereceipt = models.FileField(upload_to='schloar_feereceipt/',null=False, blank=False)
+    marksheet = models.FileField(upload_to='schloar_marksheet/',null=True, blank=False)
+    feereceipt = models.FileField(upload_to='schloar_feereceipt/',null=True, blank=False)
+    income = models.FileField(upload_to='schloar_income/',null=True, blank=False)
+    proof = models.FileField(upload_to='schloar_proof/',null=True, blank=False)
 
     def _str_(self):
         return str(self.fullname)

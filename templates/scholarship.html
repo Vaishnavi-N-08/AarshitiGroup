@@ -17,7 +17,8 @@
     <div class="card-body">
       <h3 class="card-title" style="margin-top: 15px;">Aarshiti Foundation Scholarships</h3>
       <p class="card-text">
-        ‘We make a living by what we get but we make a life by what we give’
+        <strong style="font-size: 1.5vw;"><i>‘We make a living by what we get but we make a life by what we give’</i></strong>
+        <br>
         We at Arshiti group believe in giving our best to society!
         We strive towards financially helping some of the brightest minds of our State. The process of choosing these
         candidates will be purely merit-based.
@@ -95,7 +96,7 @@
 
 <!-- Card -->
 
-<div class="student-history">
+<!-- <div class="student-history">
   <div class="student-card">
     <div class="student-img">
       <img class="round-img" style="box-shadow: 0 0 20px #1f1e1e1f" src="{% static 'assets/fb.png' %}" alt="" />
@@ -137,14 +138,14 @@
     </div>
   </div>
 
-</div>
+</div> -->
 
 <!-- Scholarship Registration -->
 
 <div id="registrationBox" class="registration-box">
   <div class="registration-left">
-    <p>Let us be the air beneath your wings</p>
-    <p>Choose from what is best for you by enrolling, NOW!</p>
+    <strong style="font-size: 1.5vw;"><i>Let us be the air beneath your wings</i></strong>
+    <p style="font-size: 1.6vw;">Choose from what is best for you by enrolling, <strong> NOW!</strong></p>
   </div>
   <div class="registration-right">
     <div class="registration-container">
@@ -178,14 +179,21 @@
 
             <div class="input-box">
               <span class="details">Mobile No</span>
-              <input type="tel" name="number" id="number" placeholder="Enter Mobile No" required>
+              <input type="tel" name="number" id="number" placeholder="Enter Mobile No" maxlength="10" required>
             </div>
             <div class="input-box">
               <span class="details">Address</span>
-              <textarea name="address" id="address" cols="30" rows="3"
+              <textarea name="address" id="address" cols="30" rows="2"
                 style="border: 1px solid rgb(255, 153, 0) !important; width: 100%; border-radius: 10px;"></textarea>
             </div>
-
+            <div class="input-group mb-3">
+              <input type="file" name="income" id="income" accept=".doc,.pdf" class="form-control" required>
+              <label class="input-group-text">Income Certificate</label>
+            </div>
+            <div class="input-group mb-3">
+              <input type="file" name="proof" id="proof" accept=".doc,.pdf" class="form-control" required>
+              <label class="input-group-text">ID Proof(Aadhar/Pan)</label>
+            </div>
           </div>
 
           <div class="detail-title">Educational Details</div>
