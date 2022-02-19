@@ -10,6 +10,12 @@ def home(request):
 def construction(request):
     return render(request, "construction.html")
 
+def spices(request):
+    return render(request, "spices.html")
+
+def agrotech(request):
+    return render(request, "agrotech.html")
+
 def register(request):
     if request.user.is_authenticated:
         return redirect('home')
