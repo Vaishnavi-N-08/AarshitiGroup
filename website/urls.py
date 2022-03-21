@@ -28,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('general.urls')),
     path('scholarship/',include('scholarship.urls')),
+    path('spices/',include('spices.urls')),
 ]
 
 # only in development
