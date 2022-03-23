@@ -10,6 +10,7 @@
 
 
 {% block body %}
+{% if flag %}
 <div style="margin: 30px;
 height: 500px;
 display: flex;
@@ -18,6 +19,97 @@ flex-wrap: wrap;
 align-content: center;
 justify-content: center;
 align-items: center;">
-    <p style="font-size: 5vw; font-weight: bolder;">Comming Soon</p>
+    <p style="font-size: 5vw; font-weight: bolder;">thanks for shopping with us
+    your total is {{total}}</p>
 </div>
+{% else %}
+<div style="margin: 30px;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-content: center;
+justify-content: center;
+align-items: center;">
+    <form action="" method="POST" style="display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;">
+        {% csrf_token %}
+        <div class="card-container" style="width: 100%; display: flex;">
+            {% for spice in spices %}
+            <div class="card" style="width: 18rem; margin: 10px;">
+                <img src="{{ spice.photo.url }}" class="card-img-top" alt="...">
+                <div class="card-body" style="color: black;">
+                    <h5 class="card-title">{{ spice.name }}</h5>
+                    <p class="card-text">{{ spice.description }}</p>
+                    <p class="card-text">{{ spice.price }}</p>
+                    <p class="card-text">{{ spice.quantity }}</p>
+                    <div class="input-group mb-3" id="{{ spice.id }}inp" hidden="true">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="button"
+                                onclick="decreaseQuantity('{{ spice.id }}')">-</button>
+                        </div>
+                        <input type="text" class="form-control" id="{{ spice.id }}" name="{{ spice.id }}" value="0"
+                            readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button"
+                                onclick="increaseQuantity('{{ spice.id }}')">+</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="{{ spice.id }}abtn"
+                        onclick="addToCart('{{ spice.id }}')">Add to cart</button>
+                    <button type="button" class="btn btn-danger" id="{{ spice.id }}rbtn"
+                        onclick="removeFromCart('{{ spice.id }}')" hidden>Remove from cart</button>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+<script>
+    function increaseQuantity(id) {
+        var quantity = document.getElementById(id).value;
+        quantity++;
+        document.getElementById(id).value = quantity;
+    }
+
+    function decreaseQuantity(id) {
+        var quantity = document.getElementById(id).value;
+        if (quantity > 0) {
+            quantity--;
+            document.getElementById(id).value = quantity;
+        }
+    }
+
+    function addToCart(id) {
+        var inpbox = document.getElementById(id + "inp");
+        inpbox.hidden = false;
+        var inp = document.getElementById(id);
+        inp.value = 1;
+        var abtn = document.getElementById(id + "abtn");
+        abtn.hidden = true;
+        var rbtn = document.getElementById(id + "rbtn");
+        rbtn.hidden = false;
+    }
+
+    function removeFromCart(id) {
+        var inpbox = document.getElementById(id + "inp");
+        inpbox.hidden = true;
+        var inp = document.getElementById(id);
+        inp.value = 0;
+        var abtn = document.getElementById(id + "abtn");
+        abtn.hidden = false;
+        var rbtn = document.getElementById(id + "rbtn");
+        rbtn.hidden = true;
+    }
+</script>
+{% endif %}
+
+
 {% endblock body %}
