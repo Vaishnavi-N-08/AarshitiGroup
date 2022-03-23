@@ -867,7 +867,7 @@ label {
   background: #cd7f32;
 }
 
-a {
+#link{
   display: block;
   padding: 5px;
   color: #fff;
@@ -879,7 +879,7 @@ a {
   transition: 1s;
 }
 
-a:hover {
+#link:hover {
   background: #666;
   transition: 1s;
 }

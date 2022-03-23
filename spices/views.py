@@ -1,4 +1,5 @@
-import asyncio
+
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.core.mail import send_mail
 
@@ -13,7 +14,9 @@ from spices.models import Cart
         
 
 # Create your views here.
+@login_required(login_url='/register/')
 def spices(request):
+    
     cart = Cart.objects.get(user=request.user)
     cartitems = cart.cartitem_set.all()
     # use prvai
