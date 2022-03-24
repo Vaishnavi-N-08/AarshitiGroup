@@ -26,6 +26,46 @@
 
 {% block body %}
 {% if flag %}
+<div class="container" style="box-sizing: border-box;
+border-radius: 5px;
+background-color: white;
+box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+position: relative;
+top: 20px;
+z-index: 1;">
+    <div class="receipt_box" style="box-sizing: border-box;">
+        <div class="head" style="box-sizing: border-box;
+        padding-top: 5px;
+        " align="center">
+            <div class="logo" style="box-sizing: border-box;flex: 1 0 30%; width: 20%;">
+                <img src="https://raw.githubusercontent.com/Vaishnavi-N-08/AarshitiGroup/master/static/assets/Green-logo.png" style="box-sizing: border-box;width: 100%;">
+            </div>
+        </div>
+        <div class="body" style="box-sizing: border-box;padding: 16px 32px;">
+            <div class="total" style="box-sizing: border-box;padding: 12px 0;">
+                <span style="box-sizing: border-box; color: slategray; font-weight: bold; color: chocolate;"><span style="color: black;">Hi, </span>{{user.username}}</span>
+                <span class="total_price" style="box-sizing: border-box;float: right;color: slategray;">{{today}}</span>
+            </div>
+            <div class="cart" style="box-sizing: border-box;">
+                <div class="title" style="box-sizing: border-box;margin-bottom: 16px;font-size: 20px;font-weight: bold;text-align: center;text-transform: capitalize;">cart</div>
+                <div class="content" style="box-sizing: border-box;font-size: 14px;">
+                    
+                    {% for i,j,k in item_info %}
+                    <div class="total" style="box-sizing: border-box;padding: 12px 0;border-top: 2px dashed #ccc;">
+                        <span style="box-sizing: border-box; color: slategray;">{{i.name}} x {{j}}</span>
+                        <span class="total_price" style="box-sizing: border-box;float: right;color: #db4a00;">₹ {{k}}</span>
+                    </div>
+                    {% endfor %}
+                    
+                    <div class="total" style="box-sizing: border-box;padding: 12px 0;font-weight: bold;text-transform: uppercase;border-top: 2px solid darkorange;">
+                        <span style="box-sizing: border-box;">total</span>
+                        <span class="total_price" style="box-sizing: border-box;float: right;color: #db4a00;">₹ {{total}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="thanks-div">
     <p>thanks for shopping with us
         your total is {{total}}</p>
@@ -76,8 +116,6 @@ align-items: center;">
             {% endfor %}
         </div>
         <div>
-            <!-- <button type="submit" class="btn btn-primary">Buy Now</button> -->
-            <!-- a submit button which will check the quantities  -->
             <button type="submit" class="btn btn-primary" id="submitbtn" hidden>Buy Now</button>
 
         </div>
@@ -86,7 +124,7 @@ align-items: center;">
 <script>
 
     itemsAdded = [];
-    
+
     function submitbtnVisibility() {
         if (itemsAdded.length > 0) {
             document.getElementById("submitbtn").hidden = false;
