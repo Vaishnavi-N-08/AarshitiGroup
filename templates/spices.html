@@ -6,21 +6,29 @@
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>
 <title>Spices</title>
+<style>
+    .thanks-div {
+        display: flex;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        background-color: orange;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-left: 100px;
+        margin-right: 100px;
+        padding: 20px;
+    }
+</style>
 {% endblock head %}
 
 
 {% block body %}
 {% if flag %}
-<div style="margin: 30px;
-height: 500px;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-align-content: center;
-justify-content: center;
-align-items: center;">
-    <p style="font-size: 5vw; font-weight: bolder;">thanks for shopping with us
-    your total is {{total}}</p>
+<div class="thanks-div">
+    <p>thanks for shopping with us
+        your total is {{total}}</p>
 </div>
 {% else %}
 <div style="margin: 30px;
@@ -68,11 +76,27 @@ align-items: center;">
             {% endfor %}
         </div>
         <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <!-- <button type="submit" class="btn btn-primary">Buy Now</button> -->
+            <!-- a submit button which will check the quantities  -->
+            <button type="submit" class="btn btn-primary" id="submitbtn" hidden>Buy Now</button>
+
         </div>
     </form>
 </div>
 <script>
+
+    itemsAdded = [];
+    
+    function submitbtnVisibility() {
+        if (itemsAdded.length > 0) {
+            document.getElementById("submitbtn").hidden = false;
+        } else {
+            document.getElementById("submitbtn").hidden = true;
+        }
+    }
+
+
+
     function increaseQuantity(id) {
         var quantity = document.getElementById(id).value;
         quantity++;
@@ -92,10 +116,13 @@ align-items: center;">
         inpbox.hidden = false;
         var inp = document.getElementById(id);
         inp.value = 1;
+        itemsAdded.push(id);
+        console.log(itemsAdded);
         var abtn = document.getElementById(id + "abtn");
         abtn.hidden = true;
         var rbtn = document.getElementById(id + "rbtn");
         rbtn.hidden = false;
+        submitbtnVisibility()
     }
 
     function removeFromCart(id) {
@@ -103,10 +130,14 @@ align-items: center;">
         inpbox.hidden = true;
         var inp = document.getElementById(id);
         inp.value = 0;
+        var index = itemsAdded.indexOf(id);
+        itemsAdded.splice(index, 1);
+        console.log(itemsAdded);
         var abtn = document.getElementById(id + "abtn");
         abtn.hidden = false;
         var rbtn = document.getElementById(id + "rbtn");
         rbtn.hidden = true;
+        submitbtnVisibility()
     }
 </script>
 {% endif %}
