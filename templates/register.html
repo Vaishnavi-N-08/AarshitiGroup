@@ -20,7 +20,7 @@
             </div>
             <p class="p1" style="margin: 1%;font-size:7vh ; ">Aarshiti Group
             <p>
-            {% for message in messages %}
+                {% for message in messages %}
             <p style="text-align: center; color: red;">{{message}}</p>
             {% endfor %}
         </div>
@@ -34,7 +34,7 @@
                 <form id="register-login" class="register-input-group" method='POST'>
                     {% csrf_token %}
                     <input type="text" class="register-input-field" placeholder="Email Id" name="emailId" required>
-                    <input type="text" class="register-input-field" placeholder="Enter Password" name="password"
+                    <input type="password" class="register-input-field" placeholder="Enter Password" name="password"
                         required>
                     <input type="text" name="log" value="yes" style="display: none;">
                     <button type="submit" class="register-submit-btn">Log In</button>
@@ -42,10 +42,10 @@
                 </form>
                 <form id="register-register" class="register-input-group" method='POST'>
                     {% csrf_token %}
-                    <input type="text" class="register-input-field" placeholder="Enter Full Name" name="userId"
+                    <input type="text" class="register-input-field" placeholder="Enter Full Name" name="userName"
                         required>
                     <input type="email" class="register-input-field" placeholder="Email ID" name="emailId" required>
-                    <input type="text" class="register-input-field" placeholder="Enter Password" name="password"
+                    <input type="password" class="register-input-field" placeholder="Enter Password" name="password"
                         required>
                     <input type="text" name="log" value="no" style="display: none;">
                     <button type="submit" class="register-submit-btn">Register</button>

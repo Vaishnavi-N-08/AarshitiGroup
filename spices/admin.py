@@ -2,8 +2,6 @@ from django.contrib import admin
 
 from spices.models import Cart, CartItem, Product
 
-# Register your models here.
-
 class ProductModelAdmin(admin.ModelAdmin):
     list_display = [
         'id',

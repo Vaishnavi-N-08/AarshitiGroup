@@ -24,6 +24,6 @@ class counselorModelAdmin(admin.ModelAdmin):
         'fullname',
         'course',
         'number'
-       ]
+    ]
 
 admin.site.register(counselor, counselorModelAdmin)
