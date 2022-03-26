@@ -19,7 +19,9 @@ class ProductModelAdmin(admin.ModelAdmin):
 class CartModelAdmin(admin.ModelAdmin):
     list_display = [
         'user',
-        'date_added'
+        'date_added',
+        'address',
+        'phone',
             ]
 
     class Meta:

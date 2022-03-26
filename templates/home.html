@@ -21,15 +21,14 @@
 </div> -->
 
 <div class="construction-box">
-  <img src="{% static 'assets\Green-logo.png' %}" alt="" />
+  <img src="{% static 'assets\homepage.png' %}" style="width: 100%; height: auto;" alt="" />
 
   <div class="construction-tree">
     <div class="row row1">
       <p style="
-          margin-top: 20px;
-          text-align: center;"><span style=" font-size: 3.5vw;">Aarshiti Group</span>
+          text-align: center;">
         <br>
-        <span style="font-size: 2vw;">A unique blend of flavour, generosity and innovation.</span>
+        <span style="font-size: 2vw;font-weight: bolder;"><i>A unique blend of flavour, generosity and innovation.</i></span>
       </p>
     </div>
   </div>
@@ -46,7 +45,7 @@
 <div class="cards-container" style="padding:0 25px;">
   <div class="card-container">
     <div class="blog-col curves-left curves-top">
-      <img class="blog-img" src="{% static 'assets/1-i.jpg' %}" />
+      <img class="blog-img" src="{% static 'assets/foundation.jpg' %}" />
     </div>
     <div class="blog-col curves-right curves-bottom">
       <div class="blog-content">
@@ -54,13 +53,13 @@
         <p>
           Aarshiti Foundation aspires to economically support ingenious students who are financially weak. A sum of ₹30,000 will be meted out to three exemplary students to help them with their education. The team of Aarshiti Foundation frequently participates in varied hackathons. The prize money earned from winning the same is then granted as scholarships.
         </p>
-        <a><div class="blog-btn">Know More</div></a>
+        <a style="text-decoration: none;" href="{% url 'scholarship' %}"><div class="blog-btn">Know More</div></a>
       </div>
     </div>
   </div>
   <div class="card-container">
     <div class="blog-col curves-left curves-top">
-      <img class="blog-img" src="{% static 'assets/1-i.jpg' %}" />
+      <img class="blog-img" src="{% static 'assets/agrotech.jpeg' %}" />
     </div>
     <div class="blog-col curves-right curves-bottom">
       <div class="blog-content">
@@ -68,13 +67,13 @@
         <p>
           The Agro-tech domain of Aarshiti undertakes industry based projects for the betterment of agricultural resources. Manufacturing of Egg Incubators, Trollies and Dassaults are a few projects that the company has successfully brought to fruition. These products are efficient as well as budget friendly.
         </p>
-        <div class="blog-btn">Know More</div>
+        <a style="text-decoration: none;" href="{% url 'agrotech' %}"><div class="blog-btn">Know More</div></a>
       </div>
     </div>
   </div>
   <div class="card-container">
     <div class="blog-col curves-left curves-top">
-      <img class="blog-img" src="{% static 'assets/1-i.jpg' %}" />
+      <img class="blog-img" src="{% static 'assets/spices.jpg' %}" />
     </div>
     <div class="blog-col curves-right curves-bottom">
       <div class="blog-content">
@@ -82,7 +81,7 @@
         <p>
           Producers of 18+ authentic spices from the Indian kitchen, quality is of paramount importance when it comes to Arshiti Groups of spices. We mass produce over 18 different aromatic spices to add irresistible flavour to your dishes.
         </p>
-        <div class="blog-btn">Know More</div>
+        <a style="text-decoration: none;" href="{% url 'spices' %}"><div  class="blog-btn">Know More</div></a>
 
       </div>
     </div>

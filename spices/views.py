@@ -43,7 +43,9 @@ def spices(request):
 	if request.method == 'POST':
 		total = 0
 		today = date.today()
-		cart = Cart(user=request.user)
+		phone = request.POST['phone']
+		address = request.POST['address']
+		cart = Cart(user=request.user,phone = phone, address = address)
 		cart.save()
 
 		# loop for making html list of items

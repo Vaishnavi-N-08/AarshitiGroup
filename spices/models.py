@@ -16,7 +16,8 @@ class Product(models.Model):
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date_added = models.DateTimeField(auto_now_add=True)
-
+    address = models.CharField(max_length=300, blank=True, null=True)
+    phone = models.CharField(max_length=15, blank=True, null=True)
     def __str__(self):
         return self.user.username
 

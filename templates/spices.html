@@ -67,9 +67,10 @@ z-index: 1;">
     </div>
 </div>
 <div class="thanks-div">
-    <p>thanks for shopping with us
+    <p style="font-weight: bold; font-size: 3vh;">Thanks for shopping with us
         your total is {{total}}</p>
 </div>
+
 {% else %}
 <div style="margin: 30px;
 display: flex;
@@ -115,12 +116,20 @@ align-items: center;">
             </div>
             {% endfor %}
         </div>
-        <div>
-            <button type="submit" class="btn btn-primary" id="submitbtn" hidden>Buy Now</button>
+        <div id="submitbtn" hidden style="padding:10px;">
+            <div class="detail-title"> Order Details</div>
 
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number"
+                required>
+            <!--  address -->
+            <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address"
+                required>
+            <button type="submit" class="btn btn-primary" style="margin-top:10px;" onclick="myFunction()" >Buy Now</button>
         </div>
     </form>
 </div>
+
+
 <script>
 
     itemsAdded = [];
@@ -132,6 +141,7 @@ align-items: center;">
             document.getElementById("submitbtn").hidden = true;
         }
     }
+
 
 
 
@@ -177,6 +187,14 @@ align-items: center;">
         rbtn.hidden = true;
         submitbtnVisibility()
     }
+
+   
+function myFunction() {
+  alert("Click on OK to continue shopping");
+}
+
+
+    
 </script>
 {% endif %}
 

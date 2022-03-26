@@ -520,16 +520,8 @@ form .button input:hover {
   width: 100%;
   height: auto;
   background-size: cover;
-  padding: 0% 10%;
+  padding: 2% 20%;
   justify-content: center;
-}
-
-.construction-box img {
-  width: 30%;
-  aspect-ratio: 1;
-  display: block;
-  margin: 0 auto;
-  margin-top: 20px;
 }
 
 .construction-tree {
