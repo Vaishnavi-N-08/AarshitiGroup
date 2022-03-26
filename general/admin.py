@@ -5,6 +5,6 @@ class FeedbackModelAdmin(admin.ModelAdmin):
     model = Feedback
     list_display = [
         'fullname'
-       ]
+    ]
 
 admin.site.register(Feedback, FeedbackModelAdmin)

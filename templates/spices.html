@@ -38,28 +38,43 @@ z-index: 1;">
         padding-top: 5px;
         " align="center">
             <div class="logo" style="box-sizing: border-box;flex: 1 0 30%; width: 20%;">
-                <img src="https://raw.githubusercontent.com/Vaishnavi-N-08/AarshitiGroup/master/static/assets/Green-logo.png" style="box-sizing: border-box;width: 100%;">
+                <img src="https://raw.githubusercontent.com/Vaishnavi-N-08/AarshitiGroup/master/static/assets/Green-logo.png"
+                    style="box-sizing: border-box;width: 100%;">
             </div>
         </div>
         <div class="body" style="box-sizing: border-box;padding: 16px 32px;">
             <div class="total" style="box-sizing: border-box;padding: 12px 0;">
-                <span style="box-sizing: border-box; color: slategray; font-weight: bold; color: chocolate;"><span style="color: black;">Hi, </span>{{user.username}}</span>
+                <span style="box-sizing: border-box; color: slategray; font-weight: bold; color: chocolate;"><span
+                        style="color: black;">Hi, </span>{{user.first_name}}</span>
                 <span class="total_price" style="box-sizing: border-box;float: right;color: slategray;">{{today}}</span>
             </div>
+            <div class="total" style="box-sizing: border-box;padding: 12px 0;">
+                <span style="box-sizing: border-box; color: slategray;"><span style="color: black;">Contact:
+                    </span>{{cart.phone}}</span>
+            </div>
+            <div class="total" style="box-sizing: border-box;padding: 12px 0;">
+                <span style="box-sizing: border-box; color: slategray;"><span style="color: black;">Address:
+                    </span>{{cart.address}}</span>
+            </div>
             <div class="cart" style="box-sizing: border-box;">
-                <div class="title" style="box-sizing: border-box;margin-bottom: 16px;font-size: 20px;font-weight: bold;text-align: center;text-transform: capitalize;">cart</div>
+                <div class="title"
+                    style="box-sizing: border-box;margin-bottom: 16px;font-size: 20px;font-weight: bold;text-align: center;text-transform: capitalize;">
+                    cart</div>
                 <div class="content" style="box-sizing: border-box;font-size: 14px;">
-                    
+
                     {% for i,j,k in item_info %}
                     <div class="total" style="box-sizing: border-box;padding: 12px 0;border-top: 2px dashed #ccc;">
                         <span style="box-sizing: border-box; color: slategray;">{{i.name}} x {{j}}</span>
-                        <span class="total_price" style="box-sizing: border-box;float: right;color: #db4a00;">₹ {{k}}</span>
+                        <span class="total_price" style="box-sizing: border-box;float: right;color: #db4a00;">₹
+                            {{k}}</span>
                     </div>
                     {% endfor %}
-                    
-                    <div class="total" style="box-sizing: border-box;padding: 12px 0;font-weight: bold;text-transform: uppercase;border-top: 2px solid darkorange;">
+
+                    <div class="total"
+                        style="box-sizing: border-box;padding: 12px 0;font-weight: bold;text-transform: uppercase;border-top: 2px solid darkorange;">
                         <span style="box-sizing: border-box;">total</span>
-                        <span class="total_price" style="box-sizing: border-box;float: right;color: #db4a00;">₹ {{total}}</span>
+                        <span class="total_price" style="box-sizing: border-box;float: right;color: #db4a00;">₹
+                            {{total}}</span>
                     </div>
                 </div>
             </div>
@@ -79,7 +94,7 @@ flex-wrap: wrap;
 align-content: center;
 justify-content: center;
 align-items: center;">
-    <form action="" method="POST" style="display: flex;
+    <form action="" id="shopping-form" method="POST" style="display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-content: center;
@@ -116,15 +131,22 @@ align-items: center;">
             </div>
             {% endfor %}
         </div>
-        <div id="submitbtn" hidden style="padding:10px;">
+        <div id="submitbtn" hidden style="padding: 10px;
+        width: -webkit-fill-available;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;">
             <div class="detail-title"> Order Details</div>
 
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number"
-                required>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number"
+                style="margin-top: 10px;" required>
             <!--  address -->
             <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address"
-                required>
-            <button type="submit" class="btn btn-primary" style="margin-top:10px;" onclick="myFunction()" >Buy Now</button>
+                style="margin-top: 10px;" required>
+            <button type="submit" class="btn btn-primary" style="margin-top:10px;" onclick="myFunction()">Buy
+                Now</button>
         </div>
     </form>
 </div>
@@ -188,13 +210,18 @@ align-items: center;">
         submitbtnVisibility()
     }
 
-   
-function myFunction() {
-  alert("Click on OK to continue shopping");
-}
+
+    function myFunction() {
+        if (phone.checkValidity() && address.checkValidity()) {
+            alert("Click on OK to confirm shopping");
+        } else {
+            alert("Please enter valid phone number and address");
+            shopping - form.submit();
+        }
+    }
 
 
-    
+
 </script>
 {% endif %}
 

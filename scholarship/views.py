@@ -18,8 +18,7 @@ def scholarship(request):
         feereceipt = request.FILES['feereceipt']
         income = request.FILES['income']
         proof = request.FILES['proof']
-        new_scholar = Scholar(fullname=fullname, email=email, secemail=secemail, number=number,
-                              address=address, collegename=collegename, grno=grno, marksheet=marksheet, feereceipt=feereceipt, income=income, proof=proof)
+        new_scholar = Scholar(fullname=fullname, email=email, secemail=secemail, number=number, address=address, collegename=collegename, grno=grno, marksheet=marksheet, feereceipt=feereceipt, income=income, proof=proof)
         new_scholar.save()
         return redirect('home')
     else:
@@ -33,8 +32,7 @@ def counselling(request):
         proof = request.FILES['proof']
         email = request.POST['email']
         address = request.POST['address']
-        new_counselor = counselor(fullname=fullname, email=email,
-                                  number=number, course=course, proof=proof, address=address)
+        new_counselor = counselor(fullname=fullname, email=email, number=number, course=course, proof=proof, address=address)
         new_counselor.save()
         return redirect('counselling')
     else:

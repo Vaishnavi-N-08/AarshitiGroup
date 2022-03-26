@@ -23,9 +23,9 @@ def register(request):
     if request.method == 'POST':
         log = request.POST.get('log')
         if log == "no":
-            username = request.POST.get('userId')
-            email = request.POST.get('emailId')
-            password = request.POST.get('password')
+            username = request.POST['userName']
+            email = request.POST['emailId']
+            password = request.POST['password']
             if User.objects.filter(email=email).exists():
                 messages.info(request, "Email Already Used")
                 return redirect('register')
