@@ -49,11 +49,11 @@ z-index: 1;">
                 <span class="total_price" style="box-sizing: border-box;float: right;color: slategray;">{{today}}</span>
             </div>
             <div class="total" style="box-sizing: border-box;padding: 12px 0;">
-                <span style="box-sizing: border-box; color: slategray;"><span style="color: black;">Contact:
+                <span style="box-sizing: border-box; color: slategray;"><span style="color: black;"><strong>Contact : </strong>
                     </span>{{cart.phone}}</span>
             </div>
             <div class="total" style="box-sizing: border-box;padding: 12px 0;">
-                <span style="box-sizing: border-box; color: slategray;"><span style="color: black;">Address:
+                <span style="box-sizing: border-box; color: slategray;"><span style="color: black;"><strong>Address : </strong>
                     </span>{{cart.address}}</span>
             </div>
             <div class="cart" style="box-sizing: border-box;">
@@ -101,10 +101,10 @@ align-items: center;">
     justify-content: center;
     align-items: center;">
         {% csrf_token %}
-        <div class="card-container" style="width: 100%; display: flex;">
+        <div class="card-container spice-container">
             {% for spice in spices %}
             <div class="card" style="width: 18rem; margin: 10px;">
-                <img src="{{ spice.photo.url }}" class="card-img-top" alt="...">
+                <img src="{{ spice.photo.url }}" class="card-img-top  spice-photo" alt="...">
                 <div class="card-body" style="color: black;">
                     <h5 class="card-title">{{ spice.name }}</h5>
                     <p class="card-text">{{ spice.description }}</p>
