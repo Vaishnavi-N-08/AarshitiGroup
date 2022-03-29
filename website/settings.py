@@ -28,7 +28,7 @@ with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['aarshitigroup.in','*','3.83.207.211']
+ALLOWED_HOSTS = ['*','52.91.186.23','aarshitigroup.in','www.aarshitigroup.in']
 
 
 # Application definition
@@ -147,5 +147,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST_USER = 'mails@aarshitigroup.in'
 EMAIL_HOST = 'smtp.aarshitigroup.in'
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
 EMAIL_HOST_PASSWORD = "aGPyVa)3"
