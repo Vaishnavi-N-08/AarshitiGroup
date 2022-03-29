@@ -39,7 +39,7 @@
 <div class="container-fluid py-2" style="padding: 0%;">
   <p style=" margin: 0%; padding: 50px 30px; background:var(--primary);  color: var(--white);
   text-align: center;">
-    Aarshiti Group was established in the year 2019 by xyz. It is a private organization with two major domains; namely
+    Aarshiti Group was established in the year 2019. It is a private organization with two major domains; namely
     Aarshiti Udyog and Aarshiti Foundation. Aarshiti Udyog produces over 18 different varieties of spices whereas
     Aarshiti Foundation is a charitable organization which renders scholarships to meritorious students from rural
     areas. The organization endeavours to assist children with bright minds who are curbed by financial constraints.
@@ -47,6 +47,25 @@
 </div>
 
 <div class="cards-container" style="padding:0 25px;">
+  <div class="card-container">
+    <div class="blog-col curves-left curves-top">
+      <img class="blog-img" src="{% static 'assets/spices.jpg' %}" />
+    </div>
+    <div class="blog-col curves-right curves-bottom">
+      <div class="blog-content">
+        <h1>Spices</h1>
+        <p>
+          Producers of 18+ authentic spices from the Indian kitchen, quality is of paramount importance when it comes to
+          Arshiti Groups of spices. We mass produce over 18 different aromatic spices to add irresistible flavour to
+          your dishes.
+        </p>
+        <a style="text-decoration: none;" href="{% url 'spices' %}">
+          <div class="blog-btn">Know More</div>
+        </a>
+
+      </div>
+    </div>
+  </div>
   <div class="card-container">
     <div class="blog-col curves-left curves-top">
       <img class="blog-img" src="{% static 'assets/foundation.jpg' %}" />
@@ -84,24 +103,6 @@
       </div>
     </div>
   </div>
-  <div class="card-container">
-    <div class="blog-col curves-left curves-top">
-      <img class="blog-img" src="{% static 'assets/spices.jpg' %}" />
-    </div>
-    <div class="blog-col curves-right curves-bottom">
-      <div class="blog-content">
-        <h1>Spices</h1>
-        <p>
-          Producers of 18+ authentic spices from the Indian kitchen, quality is of paramount importance when it comes to
-          Arshiti Groups of spices. We mass produce over 18 different aromatic spices to add irresistible flavour to
-          your dishes.
-        </p>
-        <a style="text-decoration: none;" href="{% url 'spices' %}">
-          <div class="blog-btn">Know More</div>
-        </a>
 
-      </div>
-    </div>
-  </div>
 </div>
 {% endblock %}
